@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">appcursos</string>
+
+    <string-array name="array_carreras">
+        <item> Todas las carreras  </item>
+        <item> Curso 1 </item>
+        <item> Curso 2 </item>
+        <item> Curso 3  </item>
+        <item> Curso 4  </item>
+    </string-array>
+
+
 </resources>
