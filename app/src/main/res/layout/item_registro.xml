@@ -8,7 +8,7 @@
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/Tarjeta"
+        android:id="@+id/Tarjetaid"
         android:layout_width="403dp"
         android:layout_height="match_parent"
         android:padding="12dp">
