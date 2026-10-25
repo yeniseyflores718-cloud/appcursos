@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    ```
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+            <ImageView
+                android:id="@+id/imgDeCurso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Imagen del curso" />
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="107dp"
+                android:layout_height="48dp"
+                android:layout_gravity="top|start"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#174F83"
+                android:text="‹ BACK"
+                android:textColor="#FFFFFF" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txtnombreDelcurso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PROGRAMACIÓN AVANZADA"
+                android:textColor="#111111"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Código: IS102"
+                android:textColor="#222222"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtDescripcionTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="DESCRIPCIÓN:"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Descripción del curso."
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp" />
+
+            <TextView
+                android:id="@+id/txtEspacioTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="ESPACIO:"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtEspacio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edificio C, Salón C-101"
+                android:textColor="#222222"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtHorasTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="TOTAL HORAS:"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtHoras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="80 Horas"
+                android:textColor="#222222"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtDiasTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="DÍAS DE ATENCIÓN:"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lunes, Miércoles, Viernes&#10;(10:00 - 12:00 hrs)"
+                android:textColor="#222222"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    ```
+
+</ScrollView>
+
