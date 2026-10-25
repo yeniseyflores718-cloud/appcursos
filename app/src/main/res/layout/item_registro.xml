@@ -8,22 +8,26 @@
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/Tarjeta"
+        android:layout_width="403dp"
+        android:layout_height="match_parent"
         android:padding="12dp">
 
         <ProgressBar
-            android:id="@+id/ProgressBarraporcentajeCupo"
+            android:id="@+id/ProgressBarraPorcentajeCupo"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
+            android:layout_width="231dp"
+            android:layout_height="27dp"
             android:constrainEnd_toEnd0f="parent"
             android:max="50"
             android:progress="48"
             android:progressTint="#003366"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.625"
             app:layout_constraintStart_toEndOf="@+id/im"
-            app:layout_constraintTop_toBottomOf="@+id/txtinscriptos" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/im"
@@ -63,10 +67,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtTituloCurso"
             app:layout_constraintVertical_bias="0.02" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    1.0
-    @+id/im
-    @+id/txtInscriptos
-    0.0
 
 
 </androidx.cardview.widget.CardView>
