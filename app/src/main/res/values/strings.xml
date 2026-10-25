@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">appcursos</string>
-    <string name="txtNombreCurso">Curso</string>
-    <string name="txtSalon">Salon</string>
-    <string name="btnDetalle">VER DETALEE</string>
-    <string name="btnRegistrarse">REGISTRARSE</string>
-    <string name="btnVerRegistros">VER REGISTROS</string>
+
+
 </resources>
