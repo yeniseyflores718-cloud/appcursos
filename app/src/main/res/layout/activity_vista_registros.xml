@@ -28,20 +28,16 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.451"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.592" />
 
-        <ImageView
-            android:id="@+id/imagenFlecha"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <Spinner
-        android:id="@+id/spinFiltroCarrera"
+        android:id="@+id/spnFiltroCarrera"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -77,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinFiltroCarrera"
+        app:layout_constraintTop_toBottomOf="@+id/spnFiltroCarrera"
         app:layout_constraintVertical_bias="0.301"
         tools:itemCount="4"
         tools:listitem="@layout/item_registro" />
