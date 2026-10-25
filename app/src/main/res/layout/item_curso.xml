@@ -16,10 +16,7 @@
             android:id="@+id/ProgressBarraporcentajeCupo"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:constrainBottom_toBottom0f="parent"
             android:constrainEnd_toEnd0f="parent"
-
             android:max="50"
             android:progress="48"
             android:progressTint="#003366"
