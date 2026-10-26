@@ -3,6 +3,7 @@ package com.example.appcursos.Adaptador
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,8 @@ class CursosAdaptador (
         val tvCurso: TextView =itemView.findViewById(R.id.txtNombreCurso)
         val tvSalon: TextView=itemView.findViewById(R.id.txtSalon)
         val imgCurso: ImageView=itemView.findViewById(R.id.imgCurso)
+        val btnVerDetalle: Button = itemView.findViewById(R.id.btnDetalle)
+        val btnRegistrarse: Button = itemView.findViewById(R.id.btnRegistrarse)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CursosViewHolder {
         val view= LayoutInflater.from(parent.context)
@@ -36,14 +39,10 @@ class CursosAdaptador (
             .placeholder(android.R.drawable.ic_menu_gallery) // Imagen por defecto mientras carga
             .error(android.R.drawable.stat_notify_error)     // Imagen si falla la carga
             .into(holder.imgCurso)
+        holder.btnVerDetalle.setOnClickListener {
+            activity.verDetalleCurso(curso)
+        }
 
-        holder.itemView.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                //Esta funcion se ejecuta em la vista MainActivity
-                // y se manda al presentador para que se muestre el prod seleccionado
-
-            }
-        })
     }
     override fun getItemCount(): Int {
         return listaCursos.size

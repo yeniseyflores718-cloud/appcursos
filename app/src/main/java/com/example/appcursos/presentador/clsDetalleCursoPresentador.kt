@@ -7,29 +7,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import com.example.appcursos.modelo.clsDetalleCursoModelo
+import kotlinx.coroutines.withContext
 
 
 class clsDetalleCursoPresentador(val vista: DetalleCursoActivity) {
+    private val modelo = clsDetalleCursoModelo()
 
-    val modelo = clsDetalleCursoModelo()
-
-    fun obtenerDetalleCurso(idCurso: Int){
-        CoroutineScope(Dispatchers.Main).launch{
+    fun cargarImagenes(idCurso: Int) {
+        CoroutineScope(Dispatchers.Main).launch {
             try {
-
-                val curso = modelo.obtenerDetalleCurso(idCurso)
-
-                if (curso!= null){
-                    vista.mostrarDetalleCurso(curso)
-                }else{
-                    vista.mostrarError("No se pudo encontrar el curso")
+                val imagenes = withContext(Dispatchers.IO) {
+                    modelo.obtenerImagenes(idCurso)
                 }
-
-            }catch (e: Exception){
-                vista.mostrarError("Error al obtener los detalles: "+e.localizedMessage)
+                vista.mostrarImagenes(imagenes)
+            } catch (e: Exception) {
+                vista.mostrarError("Error al cargar imágenes: ${e.message}")
             }
-
         }
-
     }
+
 }
