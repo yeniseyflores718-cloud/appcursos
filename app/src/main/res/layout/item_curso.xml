@@ -26,7 +26,7 @@
             android:gravity = "center"
             android:textStyle = "bold"
             android:textSize = "14sp"
-            android:text="@string/txtNombreCurso" />
+            android:text="Nombre del curso" />
 
         <TextView
             android:id="@+id/txtSalon"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity = "center"
             android:textSize = "12sp"
-            android:text="@string/txtSalon" />
+            android:text="Salon" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:textSize="10sp"
                 android:backgroundTint ="#1565C0"
-                android:text="@string/btnDetalle" />
+                android:text="VER DETALLE" />
 
             <Button
                 android:id="@+id/btnRegistrarse"
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:textSize="9sp"
                 android:backgroundTint ="#2E7D32"
-                android:text="@string/btnRegistrarse" />
+                android:text="REGISTRARSE" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
