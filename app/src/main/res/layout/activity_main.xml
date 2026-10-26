@@ -47,7 +47,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="#1565C0"
-        android:text="@string/btnVerRegistros"
+        android:text="VER REGISTROS"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
