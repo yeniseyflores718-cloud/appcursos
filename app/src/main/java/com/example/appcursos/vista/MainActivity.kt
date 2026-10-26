@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             override fun onItemSelected(parent:AdapterView<*>?,view: View?, position:Int,id:Long){
                 presenter.seleccionarCarrera(position)
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
     }
