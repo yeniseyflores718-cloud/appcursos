@@ -98,7 +98,14 @@ class VistaRegistros : AppCompatActivity() {
 
         if (posicion == 0){
             rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(listaInscripciones)
-            txtMostrarContador.text = "Total de cursos: "+listaInscripciones.size
+            var totalInscritos = 0
+
+            for (curso in listaInscripciones){
+                totalInscritos = totalInscritos + curso.totalInscritos
+            }
+
+            txtMostrarContador.text = "Total de inscritos: " + totalInscritos
+
         }else{
             val carreraSeleccionada = listaCarreras[posicion]
             val cursosFiltrados = listaInscripciones.filter {
@@ -106,7 +113,13 @@ class VistaRegistros : AppCompatActivity() {
             }
 
             rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(cursosFiltrados)
-            txtMostrarContador.text = "Total de cursos: " + cursosFiltrados.size
+            var totalInscritos = 0
+
+            for (curso in listaInscripciones){
+                totalInscritos = totalInscritos+curso.totalInscritos
+            }
+
+            txtMostrarContador.text = "Total de inscritos : " + totalInscritos
         }
     }
 
