@@ -31,6 +31,7 @@ class RegistroCurso : AppCompatActivity() {
 
     private lateinit var presentador: clsCursosPresentador
     private var cursoId: Int = 1
+    //comentario para poder mandar esto como cambio
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
