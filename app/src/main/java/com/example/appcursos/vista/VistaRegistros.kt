@@ -108,7 +108,6 @@ class VistaRegistros : AppCompatActivity() {
             rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(cursosFiltrados)
             txtMostrarContador.text = "Total de cursos: " + cursosFiltrados.size
         }
-
     }
 
 }
