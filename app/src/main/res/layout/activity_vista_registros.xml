@@ -38,8 +38,8 @@
 
     <Spinner
         android:id="@+id/spnFiltroCarrera"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_width="363dp"
+        android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="16dp"
@@ -55,16 +55,15 @@
         android:text="Total "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14"
-        />
+        app:layout_constraintVertical_bias="0.143" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTarjetasCursos"
-        android:layout_width="354dp"
-        android:layout_height="435dp"
+        android:layout_width="374dp"
+        android:layout_height="522dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -79,8 +78,9 @@
 
     <Button
         android:id="@+id/btnVolverCatalogo"
-        android:layout_width="253dp"
-        android:layout_height="wrap_content"
+        android:layout_width="211dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#003366"
         android:text="VOLVER AL CATALOGO"
         app:layout_constraintBottom_toBottomOf="parent"
