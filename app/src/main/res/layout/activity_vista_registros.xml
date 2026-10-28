@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txtTituloEstadoInscrpciones"
+            android:id="@+id/txtTituloEstadoInscripciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ESTADO INSCRIPCIONES"
@@ -37,7 +37,7 @@
 
 
     <Spinner
-        android:id="@+id/spnnerFiltroCarrera"
+        android:id="@+id/spnFiltroCarrera"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTargetasCursos"
+        android:id="@+id/rvTarjetasCursos"
         android:layout_width="354dp"
         android:layout_height="435dp"
         android:layout_marginStart="1dp"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnnerFiltroCarrera"
+        app:layout_constraintTop_toBottomOf="@+id/spnFiltroCarrera"
         app:layout_constraintVertical_bias="0.301"
         tools:itemCount="4"
         tools:listitem="@layout/item_registro" />
