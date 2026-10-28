@@ -89,4 +89,10 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    fun abrirRegistroCurso(curso: dataCursos) {
+        val intent = Intent(this, RegistroCurso::class.java)
+        intent.putExtra("curso_id", curso.id) // O los datos que necesites pasar
+        startActivity(intent)
+    }
 }

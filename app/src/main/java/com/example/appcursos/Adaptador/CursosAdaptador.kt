@@ -32,7 +32,7 @@ class CursosAdaptador (
         val curso = listaCursos[position]
         holder.tvCurso.text = curso.nombre
         holder.tvSalon.text = "Salón: ${curso.espacio}"
-        val baseUrl = "http://192.168.200.214/cursos_api/"
+        val baseUrl = "http://192.168.10.126/cursos_api/"
         val urlImagenCompleta = baseUrl + curso.urlimagenprincipal
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)
@@ -43,6 +43,9 @@ class CursosAdaptador (
             activity.verDetalleCurso(curso)
         }
 
+        holder.btnRegistrarse.setOnClickListener {
+            activity.abrirRegistroCurso(curso)
+        }
     }
     override fun getItemCount(): Int {
         return listaCursos.size

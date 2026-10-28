@@ -28,6 +28,10 @@
             android:name=".vista.VistaRegistros"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".vista.RegistroCurso"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
