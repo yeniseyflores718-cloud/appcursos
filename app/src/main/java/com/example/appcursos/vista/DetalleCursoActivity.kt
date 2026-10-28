@@ -66,7 +66,7 @@ class DetalleCursoActivity : AppCompatActivity() {
     fun mostrarImagenes(imagenes: List<dataDetalleCurso>) {
         val portada = imagenes.getOrNull(1) ?: imagenes.firstOrNull()
         portada?.let {
-            val baseUrl = "http://192.168.200.214/cursos_api/"
+            val baseUrl = "http://192.168.10.126/cursos_api/"
             Glide.with(this)
                 .load(baseUrl + it.urlImagen)
                 .placeholder(android.R.drawable.ic_menu_gallery)
