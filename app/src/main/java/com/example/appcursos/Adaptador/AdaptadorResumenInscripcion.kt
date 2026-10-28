@@ -38,7 +38,7 @@ class AdaptadorResumenInscripcion(
         holder.tvTotalInscritos.text = "Inscritos: " + curso.totalInscritos
         holder.tvCupo.text = "Cupo máximo: " + (curso.cupoMaximo ?: 0)
 
-        val baseUrl = "http://192.168.200.214/cursos/"
+        val baseUrl = "http://192.168.10.126/cursos/"
         val urlImagenCompleta = baseUrl + curso.urlImagenPrincipal
 
         Glide.with(holder.itemView.context)
