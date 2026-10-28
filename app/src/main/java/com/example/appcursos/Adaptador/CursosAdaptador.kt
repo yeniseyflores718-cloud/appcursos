@@ -43,6 +43,9 @@ class CursosAdaptador (
             activity.verDetalleCurso(curso)
         }
 
+        holder.btnRegistrarse.setOnClickListener {
+            activity.abrirRegistroCurso(curso)
+        }
     }
     override fun getItemCount(): Int {
         return listaCursos.size
