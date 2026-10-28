@@ -6,6 +6,7 @@ import com.example.appcursos.modelo.dataCarreras
 import com.example.appcursos.modelo.dataCursos
 import retrofit2.http.Body
 import com.example.appcursos.modelo.dataDetalleCurso
+import com.example.appcursos.modelo.dataResumenInscripcion
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -22,4 +23,6 @@ interface ApiService {
     suspend fun registrarInscripcion(@Body request: RegistroRequest): RegistroResponse
     @GET("curso_detalle.php")
     suspend fun detalleCurso(@Query("curso_id") curso_Id: Int):List<dataDetalleCurso>
+    @GET("resumen_inscripcion.php")
+    suspend fun obtenerResumenInscripcion(): List<dataResumenInscripcion>
 }
