@@ -115,7 +115,7 @@ class VistaRegistros : AppCompatActivity() {
             rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(cursosFiltrados)
             var totalInscritos = 0
 
-            for (curso in listaInscripciones){
+            for (curso in cursosFiltrados){
                 totalInscritos = totalInscritos+curso.totalInscritos
             }
 
