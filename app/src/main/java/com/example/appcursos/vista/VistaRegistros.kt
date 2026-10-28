@@ -1,5 +1,7 @@
 package com.example.appcursos.vista
-
+import android.widget.ArrayAdapter
+import android.widget.AdapterView
+import com.example.appcursos.modelo.dataCarreras
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
@@ -14,7 +16,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appcursos.R
 import com.example.appcursos.modelo.dataResumenInscripcion
 import com.example.appcursos.Adaptador.AdaptadorResumenInscripcion
+import com.example.appcursos.modelo.clsCarrerasModelo
 import com.example.appcursos.presentador.clsVerRegistroPresentador
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 class VistaRegistros : AppCompatActivity() {
 
@@ -25,6 +32,11 @@ class VistaRegistros : AppCompatActivity() {
     private lateinit var btnVolverCatalogo: Button
 
     private lateinit var presentador: clsVerRegistroPresentador
+
+    private var listaInscripciones: List<dataResumenInscripcion> = emptyList()
+    private var listaCarreras: List<dataCarreras> = emptyList()
+
+    private val modeloCarreras = clsCarrerasModelo()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,13 +56,59 @@ class VistaRegistros : AppCompatActivity() {
         presentador = clsVerRegistroPresentador(this)
         presentador.obtenerResumenInscripcion()
 
+        cargarCarreras()
+        spnFiltroCarrera.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: android.view.View?,
+                position: Int,
+                id: Long
+            ) {
+                filtrarCursos()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+
     }
     fun mostrarInscripciones(inscripciones: List<dataResumenInscripcion>){
-        rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(inscripciones)
-        txtMostrarContador.text = "Total de inscripciones: " + inscripciones.size
+        listaInscripciones = inscripciones
+        filtrarCursos()
     }
     fun mostrarError(mensaje : String){
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+    }
+
+    private fun cargarCarreras(){
+        CoroutineScope(Dispatchers.Main).launch{
+            try {
+                listaCarreras = modeloCarreras.obtenerCarreras()
+
+                val adaptador = ArrayAdapter(this@VistaRegistros, android.R.layout.simple_spinner_dropdown_item, listaCarreras)
+                spnFiltroCarrera.adapter = adaptador
+            }catch (e: Exception){
+                mostrarError("Error al cargar las carreras: "+ e.localizedMessage)
+            }
+        }
+    }
+    private fun filtrarCursos(){
+        val posicion = spnFiltroCarrera.selectedItemPosition
+
+        if (posicion == 0){
+            rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(listaInscripciones)
+            txtMostrarContador.text = "Total de cursos: "+listaInscripciones.size
+        }else{
+            val carreraSeleccionada = listaCarreras[posicion]
+            val cursosFiltrados = listaInscripciones.filter {
+                it.idCarrera == carreraSeleccionada.id
+            }
+
+            rvTarjetasCursos.adapter = AdaptadorResumenInscripcion(cursosFiltrados)
+            txtMostrarContador.text = "Total de cursos: " + cursosFiltrados.size
+        }
+
     }
 
 }
