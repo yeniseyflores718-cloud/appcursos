@@ -23,6 +23,6 @@ interface ApiService {
     suspend fun registrarInscripcion(@Body request: RegistroRequest): RegistroResponse
     @GET("curso_detalle.php")
     suspend fun detalleCurso(@Query("curso_id") curso_Id: Int):List<dataDetalleCurso>
-    @GET("resumen_inscripcion.php")
+    @GET("inscripciones_resumen.php")
     suspend fun obtenerResumenInscripcion(): List<dataResumenInscripcion>
 }
