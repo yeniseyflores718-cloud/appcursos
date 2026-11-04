@@ -7,6 +7,11 @@ class clsCursosModelo {
         return RetrofitCliente.apiService.obtenerCursoPorId(cursoId)
     }
 
+    suspend fun buscarAlumno(matricula: String): RegistroResponse {
+        val request = RegistroRequest(idCurso = 0, matricula = matricula, fecha = "", correo = "")
+        return RetrofitCliente.apiService.registrarInscripcion(request)
+    }
+
     suspend fun registrarCurso(idCurso: Int, matricula: String, fecha: String, correo: String): RegistroResponse {
         val request = RegistroRequest(idCurso, matricula, fecha, correo)
         return RetrofitCliente.apiService.registrarInscripcion(request)

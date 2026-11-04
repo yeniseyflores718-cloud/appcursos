@@ -3,7 +3,9 @@ package com.example.appcursos.vista
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -31,6 +33,7 @@ class RegistroCurso : AppCompatActivity() {
 
     private lateinit var presentador: clsCursosPresentador
     private var cursoId: Int = 1
+
     //comentario para poder mandar esto como cambio
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,9 +51,6 @@ class RegistroCurso : AppCompatActivity() {
 
         presentador = clsCursosPresentador(this)
         txtFechaRegistro.setText(java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault()).format(java.util.Date()))
-        txtMatriculaAlumno.doOnTextChanged { texto, _, _, _ ->
-            txtCorreoInstitucional.setText(if (texto.isNullOrEmpty()) "" else "${texto.toString().trim()}@uthh.edu.mx")
-        }
 
         cursoId = intent.getIntExtra("id_curso", intent.getIntExtra("curso_id", 1))
 
@@ -64,8 +64,27 @@ class RegistroCurso : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        txtMatriculaAlumno.setOnEditorActionListener(this::buscardatos)
     }
 
+
+    fun buscardatos(v: TextView?, boton:Int,evento: KeyEvent?): Boolean
+    {
+        if (boton == EditorInfo.IME_ACTION_DONE)
+        {
+            Toast.makeText(this, "Prueba", Toast.LENGTH_SHORT).show()
+            presentador.realizarBusqueda(txtMatriculaAlumno.text.toString())
+            return true
+        }
+
+        return false
+    }
+
+    fun mostrarCorreo(correo: String){
+        txtCorreoInstitucional.setText(correo)
+    }
     private fun ejecutarConfirmarInscripcion(v: View) {
         val matricula = txtMatriculaAlumno.text.toString().trim()
         val fecha = txtFechaRegistro.text.toString().trim()
@@ -85,15 +104,12 @@ class RegistroCurso : AppCompatActivity() {
 
     fun mostrarDatosCurso(nombreCurso: String, urlImagen: String) {
         lblNombreCurso.text = nombreCurso
-        lblNombreCurso.setTextColor(Color.BLACK)
 
         if (!urlImagen.isNullOrEmpty()) {
-            val baseUrl = "http://192.168.10.126/cursos_api/"
-            val rutaLimpia = urlImagen.removePrefix("/")
-            val urlFinal = if (urlImagen.startsWith("http")) urlImagen else baseUrl + rutaLimpia
+            val baseUrl = "http://192.168.200.214/cursos_api/"
 
             Glide.with(this)
-                .load(urlFinal)
+                .load(baseUrl + urlImagen)
                 .placeholder(android.R.drawable.ic_menu_gallery)
                 .error(android.R.drawable.stat_notify_error)
                 .into(imgCursoRegistro)

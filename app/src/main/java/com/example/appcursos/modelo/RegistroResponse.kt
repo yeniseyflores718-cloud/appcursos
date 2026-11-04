@@ -6,5 +6,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RegistroResponse(
     @SerialName("exito") val exito: Boolean,
-    @SerialName("mensaje") val mensaje: String
+    @SerialName("mensaje") val mensaje: String,
+    @SerialName("correo") val correo: String =""
 )
