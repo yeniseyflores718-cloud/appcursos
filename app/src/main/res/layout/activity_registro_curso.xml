@@ -113,6 +113,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Ingrese su matricula"
+        android:imeOptions="actionDone"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

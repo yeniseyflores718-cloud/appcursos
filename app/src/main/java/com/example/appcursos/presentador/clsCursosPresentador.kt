@@ -51,4 +51,27 @@ class clsCursosPresentador(private val vista: RegistroCurso) {
             }
         }
     }
+
+    fun realizarBusqueda(matricula: String) {
+        if (matricula.isEmpty()) {
+            vista.mostrarMensajeError("Por favor, ingresa la matrícula")
+            return
+        }
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val respuesta = withContext(Dispatchers.IO) {
+                    modeloCursos.buscarAlumno(matricula)
+                }
+
+                if (respuesta.exito) {
+                    vista.mostrarCorreo(respuesta.correo)
+                } else {
+                    vista.mostrarMensajeError(respuesta.mensaje)
+                }
+            } catch (e: Exception) {
+                vista.mostrarMensajeError("Error de conexión: ${e.localizedMessage ?: "Error desconocido"}")
+            }
+        }
+    }
 }
